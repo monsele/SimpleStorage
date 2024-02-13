@@ -1,0 +1,181 @@
+{
+  "address": "0x026EE6f203d681514410707AF085478842838Fd0",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_favoriteNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "addPerson",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "nameToFavoriteNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "retrieve",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_favoriteNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "store",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xe56e433a92652fece325b526a8d6d987e736a84406187ac5bed04bbbbf6d630d",
+  "receipt": {
+    "to": null,
+    "from": "0x63bfb337775E7794d34F147FA4f696b3522eAa53",
+    "contractAddress": "0x026EE6f203d681514410707AF085478842838Fd0",
+    "transactionIndex": 94,
+    "gasUsed": "291483",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x61514ea51f95c3222382a2b5c92cf9492ffa9df1e855c48bec92568bf219ed11",
+    "transactionHash": "0xe56e433a92652fece325b526a8d6d987e736a84406187ac5bed04bbbbf6d630d",
+    "logs": [],
+    "blockNumber": 5276041,
+    "cumulativeGasUsed": "10015752",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "ada8f254ff44695f405744f0f31dfcfc",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_favoriteNumber\",\"type\":\"uint256\"}],\"name\":\"addPerson\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"nameToFavoriteNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"retrieve\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_favoriteNumber\",\"type\":\"uint256\"}],\"name\":\"store\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SimpleStorage.sol\":\"SimpleStorage\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/SimpleStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity >=0.8.0 <0.9.0;\\r\\n\\r\\ncontract SimpleStorage {\\r\\n    uint256 myFavoriteNumber;\\r\\n\\r\\n    struct Person {\\r\\n        uint256 favoriteNumber;\\r\\n        string name;\\r\\n    }\\r\\n    // uint256[] public anArray;\\r\\n    Person[] private listOfPeople;\\r\\n\\r\\n    mapping(string => uint256) public nameToFavoriteNumber;\\r\\n\\r\\n    function store(uint256 _favoriteNumber) public {\\r\\n        myFavoriteNumber = _favoriteNumber;\\r\\n    }\\r\\n\\r\\n    function retrieve() external view returns (uint256) {\\r\\n        return myFavoriteNumber;\\r\\n    }\\r\\n\\r\\n    function addPerson(string memory _name, uint256 _favoriteNumber) public {\\r\\n        listOfPeople.push(Person(_favoriteNumber, _name));\\r\\n        nameToFavoriteNumber[_name] = _favoriteNumber;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x32d0b1edef5426ce3dbb8850ae8481e698fa394706b36b5bea5e0a3db1a20c11\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061044f806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80632e64cec1146100515780636057361d146100675780636f760f411461007c5780638bab8dd51461008f575b600080fd5b6000545b60405190815260200160405180910390f35b61007a610075366004610163565b600055565b005b61007a61008a36600461021f565b6100ba565b61005561009d366004610264565b805160208183018101805160028252928201919093012091525481565b6040805180820190915281815260208101838152600180548082018255600091909152825160029091027fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf68101918255915190917fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7019061013b908261032a565b5050508060028360405161014f91906103ea565b908152604051908190036020019020555050565b60006020828403121561017557600080fd5b5035919050565b634e487b7160e01b600052604160045260246000fd5b600082601f8301126101a357600080fd5b813567ffffffffffffffff808211156101be576101be61017c565b604051601f8301601f19908116603f011681019082821181831017156101e6576101e661017c565b816040528381528660208588010111156101ff57600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000806040838503121561023257600080fd5b823567ffffffffffffffff81111561024957600080fd5b61025585828601610192565b95602094909401359450505050565b60006020828403121561027657600080fd5b813567ffffffffffffffff81111561028d57600080fd5b61029984828501610192565b949350505050565b600181811c908216806102b557607f821691505b6020821081036102d557634e487b7160e01b600052602260045260246000fd5b50919050565b601f82111561032557600081815260208120601f850160051c810160208610156103025750805b601f850160051c820191505b818110156103215782815560010161030e565b5050505b505050565b815167ffffffffffffffff8111156103445761034461017c565b6103588161035284546102a1565b846102db565b602080601f83116001811461038d57600084156103755750858301515b600019600386901b1c1916600185901b178555610321565b600085815260208120601f198616915b828110156103bc5788860151825594840194600190910190840161039d565b50858210156103da5787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b6000825160005b8181101561040b57602081860181015185830152016103f1565b50600092019182525091905056fea26469706673582212209bd408ee6a0d1a67c345aee8bc1651ac265c2839375bcf9f681ec0bb4305f55f64736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80632e64cec1146100515780636057361d146100675780636f760f411461007c5780638bab8dd51461008f575b600080fd5b6000545b60405190815260200160405180910390f35b61007a610075366004610163565b600055565b005b61007a61008a36600461021f565b6100ba565b61005561009d366004610264565b805160208183018101805160028252928201919093012091525481565b6040805180820190915281815260208101838152600180548082018255600091909152825160029091027fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf68101918255915190917fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7019061013b908261032a565b5050508060028360405161014f91906103ea565b908152604051908190036020019020555050565b60006020828403121561017557600080fd5b5035919050565b634e487b7160e01b600052604160045260246000fd5b600082601f8301126101a357600080fd5b813567ffffffffffffffff808211156101be576101be61017c565b604051601f8301601f19908116603f011681019082821181831017156101e6576101e661017c565b816040528381528660208588010111156101ff57600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000806040838503121561023257600080fd5b823567ffffffffffffffff81111561024957600080fd5b61025585828601610192565b95602094909401359450505050565b60006020828403121561027657600080fd5b813567ffffffffffffffff81111561028d57600080fd5b61029984828501610192565b949350505050565b600181811c908216806102b557607f821691505b6020821081036102d557634e487b7160e01b600052602260045260246000fd5b50919050565b601f82111561032557600081815260208120601f850160051c810160208610156103025750805b601f850160051c820191505b818110156103215782815560010161030e565b5050505b505050565b815167ffffffffffffffff8111156103445761034461017c565b6103588161035284546102a1565b846102db565b602080601f83116001811461038d57600084156103755750858301515b600019600386901b1c1916600185901b178555610321565b600085815260208120601f198616915b828110156103bc5788860151825594840194600190910190840161039d565b50858210156103da5787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b6000825160005b8181101561040b57602081860181015185830152016103f1565b50600092019182525091905056fea26469706673582212209bd408ee6a0d1a67c345aee8bc1651ac265c2839375bcf9f681ec0bb4305f55f64736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3,
+        "contract": "contracts/SimpleStorage.sol:SimpleStorage",
+        "label": "myFavoriteNumber",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 12,
+        "contract": "contracts/SimpleStorage.sol:SimpleStorage",
+        "label": "listOfPeople",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_struct(Person)8_storage)dyn_storage"
+      },
+      {
+        "astId": 16,
+        "contract": "contracts/SimpleStorage.sol:SimpleStorage",
+        "label": "nameToFavoriteNumber",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_string_memory_ptr,t_uint256)"
+      }
+    ],
+    "types": {
+      "t_array(t_struct(Person)8_storage)dyn_storage": {
+        "base": "t_struct(Person)8_storage",
+        "encoding": "dynamic_array",
+        "label": "struct SimpleStorage.Person[]",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_string_memory_ptr,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_string_memory_ptr",
+        "label": "mapping(string => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_string_memory_ptr": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Person)8_storage": {
+        "encoding": "inplace",
+        "label": "struct SimpleStorage.Person",
+        "members": [
+          {
+            "astId": 5,
+            "contract": "contracts/SimpleStorage.sol:SimpleStorage",
+            "label": "favoriteNumber",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 7,
+            "contract": "contracts/SimpleStorage.sol:SimpleStorage",
+            "label": "name",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
